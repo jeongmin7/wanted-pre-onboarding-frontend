@@ -1,24 +1,43 @@
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { api } from "../api/index";
 
 const Button = ({ keyword, disabled, loginInfo, login }) => {
+  const navigate = useNavigate();
+
   const handleLogin = () => {
-    // if (loginInfo.email && loginInfo.password) {
-    //   let { email, password } = loginInfo;
-    //   axios
-    //     .post(
-    //       `${api}/auth/signin`,
-    //       { email: email, password: password },
-    //       {
-    //         headers: { "Content-Type": "application/json" },
-    //       }
-    //     )
-    //     .then((res) => console.log(res));
-    // }
-    console.log("login");
+    if (loginInfo.email && loginInfo.password) {
+      let { email, password } = loginInfo;
+      axios
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/auth/signin`,
+          { email: email, password: password },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        )
+        .then((res) =>
+          localStorage.setItem("accessToken", res.data.access_token)
+        )
+        .then(() => navigate("/todo"));
+    }
   };
 
   const handleSignUp = () => {
-    console.log("회원가입");
+    if (loginInfo.email && loginInfo.password) {
+      let { email, password } = loginInfo;
+
+      axios
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/auth/signup`,
+          { email: email, password: password },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        )
+        .then(() => alert("회원가입이 완료되었습니다!"));
+    }
   };
   return (
     <div>
