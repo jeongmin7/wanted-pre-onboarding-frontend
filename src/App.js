@@ -1,7 +1,7 @@
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./pages/Main";
 import Todo from "./pages/Todo";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />}></Route>
           <Route path="/todo" element={<Todo />}></Route>
+          <Route path="*" element={<NotFound />}></Route>{" "}
         </Routes>
       </BrowserRouter>
     </div>
