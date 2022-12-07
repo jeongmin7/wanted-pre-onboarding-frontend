@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { api } from "../api/index";
 
 const Button = ({ keyword, disabled, loginInfo, login }) => {
   const navigate = useNavigate();
@@ -55,7 +54,7 @@ export default Button;
 
 const Btn = styled.button`
   width: 100%;
-  background-color: #1515ff;
+  background-color: #6c4ab6;
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
