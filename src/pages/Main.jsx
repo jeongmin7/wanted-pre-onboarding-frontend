@@ -7,7 +7,7 @@ const Main = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem("accessToken")) {
-      navigate("/todo");
+      navigate("/wanted-pre-onboarding-frontend/todo");
     }
   }, [navigate]);
   return (

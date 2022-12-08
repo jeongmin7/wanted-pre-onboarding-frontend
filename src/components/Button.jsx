@@ -4,10 +4,10 @@ import styled from "styled-components";
 
 const Button = ({ keyword, disabled, loginInfo, login, setLogin }) => {
   const navigate = useNavigate();
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (loginInfo.email && loginInfo.password) {
       let { email, password } = loginInfo;
-      axios
+      await axios
         .post(
           `${process.env.REACT_APP_API_BASE_URL}/auth/signin`,
           { email: email, password: password },
@@ -18,7 +18,6 @@ const Button = ({ keyword, disabled, loginInfo, login, setLogin }) => {
         .then((res) =>
           localStorage.setItem("accessToken", res.data.access_token)
         )
-        .then(() => window.location.reload())
         .catch((err) => alert(err.response.data.message));
     }
   };
@@ -36,7 +35,7 @@ const Button = ({ keyword, disabled, loginInfo, login, setLogin }) => {
           }
         )
         .then(() => alert("회원가입이 완료되었습니다!"))
-        .then(() => navigate("/"))
+        .then(() => navigate("/wanted-pre-onboarding-frontend"))
         .catch((err) => alert(err.response.data.message));
     }
   };

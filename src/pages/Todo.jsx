@@ -12,7 +12,7 @@ const Todo = () => {
 
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
-      navigate("/");
+      navigate("/wanted-pre-onboarding-frontend");
     }
   }, []);
 
@@ -30,7 +30,7 @@ const Todo = () => {
     <Wrapper>
       <TodoHeader />
       <TodoBoxWrapper>
-        <TodoBox todos={todos} />
+        <TodoBox todos={todos} setTodos={setTodos} />
       </TodoBoxWrapper>
     </Wrapper>
   );
