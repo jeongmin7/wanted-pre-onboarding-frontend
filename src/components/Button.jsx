@@ -18,7 +18,8 @@ const Button = ({ keyword, disabled, loginInfo, login, setLogin }) => {
         .then((res) =>
           localStorage.setItem("accessToken", res.data.access_token)
         )
-        .then(() => window.location.reload());
+        .then(() => window.location.reload())
+        .catch((err) => alert(err.response.data.message));
     }
   };
 
@@ -35,7 +36,8 @@ const Button = ({ keyword, disabled, loginInfo, login, setLogin }) => {
           }
         )
         .then(() => alert("회원가입이 완료되었습니다!"))
-        .then(() => navigate("/"));
+        .then(() => navigate("/"))
+        .catch((err) => alert(err.response.data.message));
     }
   };
   return (

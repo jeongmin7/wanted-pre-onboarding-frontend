@@ -19,7 +19,8 @@ const Todo = ({ todo, token }) => {
         },
       })
       .then((res) => console.log(res))
-      .then(() => window.location.reload());
+      .then(() => window.location.reload())
+      .catch((err) => alert(err.response.data.message));
   };
 
   const updateTodo = (id) => {
@@ -38,7 +39,8 @@ const Todo = ({ todo, token }) => {
       .then(() => {
         window.location.reload();
       })
-      .then(() => window.location.reload());
+      .then(() => window.location.reload())
+      .catch((err) => alert(err.response.data.message));
   };
   const updateIsCompleted = (id) => {
     axios
@@ -53,7 +55,8 @@ const Todo = ({ todo, token }) => {
           },
         }
       )
-      .then(() => window.location.reload());
+      .then(() => window.location.reload())
+      .catch((err) => alert(err.response.data.message));
   };
   return (
     <div>
