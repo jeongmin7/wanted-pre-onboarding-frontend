@@ -6,12 +6,11 @@
 <br/>
 
 ## 배포 
-
-
+[배포사이트](https://habitual-ocean.surge.sh/)
 
 ## 완성된 GIF
 
-> **관리자 페이지**
+> **로그인**
 
 <details>
   <summary>관리자 페이지 로그인 </summary>
@@ -21,7 +20,71 @@
 </details>
 
 
-> **사용자 페이지**
+> **회원가입**
+
+<details>
+  <summary>사용자페이지 상품목록, 업데이트 내역</summary>
+    <div markdown="1">
+        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413498531851/Sep-22-2022_16-13-33.gif" width='600'/>
+    </div>
+</details>
+
+<details>
+  <summary>사용자 페이지 FAQ</summary>
+    <div markdown="1">
+        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413947310101/Sep-22-2022_16-13-42.gif" width='600'/>
+    </div>
+</details>
+
+> **Todo 추가**
+
+<details>
+  <summary>사용자페이지 상품목록, 업데이트 내역</summary>
+    <div markdown="1">
+        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413498531851/Sep-22-2022_16-13-33.gif" width='600'/>
+    </div>
+</details>
+
+<details>
+  <summary>사용자 페이지 FAQ</summary>
+    <div markdown="1">
+        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413947310101/Sep-22-2022_16-13-42.gif" width='600'/>
+    </div>
+</details>
+
+> **Todo 삭제**
+
+<details>
+  <summary>사용자페이지 상품목록, 업데이트 내역</summary>
+    <div markdown="1">
+        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413498531851/Sep-22-2022_16-13-33.gif" width='600'/>
+    </div>
+</details>
+
+<details>
+  <summary>사용자 페이지 FAQ</summary>
+    <div markdown="1">
+        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413947310101/Sep-22-2022_16-13-42.gif" width='600'/>
+    </div>
+</details>
+
+> **Todo 수정**
+
+<details>
+  <summary>사용자페이지 상품목록, 업데이트 내역</summary>
+    <div markdown="1">
+        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413498531851/Sep-22-2022_16-13-33.gif" width='600'/>
+    </div>
+</details>
+
+<details>
+  <summary>사용자 페이지 FAQ</summary>
+    <div markdown="1">
+        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413947310101/Sep-22-2022_16-13-42.gif" width='600'/>
+    </div>
+</details>
+
+> **완료 여부 수정**
 
 <details>
   <summary>사용자페이지 상품목록, 업데이트 내역</summary>
@@ -59,7 +122,7 @@
 
 :: 2. 투두 리스트
 
-- [ ] Assignment4
+- [x] Assignment4
   - [x] /todo경로에 접속하면 투두 리스트의 목록을 볼 수 있도록 해주세요
   - [x] 리스트 페이지에는 투두 리스트의 내용과 완료 여부가 표시되어야 합니다.
   - [x] 리스트 페이지에는 입력창과 추가 버튼이 있고, 추가 버튼을 누르면 입력창의 내용이 새로운 투두 리스트로 추가되도록 해주세요
