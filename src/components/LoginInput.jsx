@@ -63,7 +63,6 @@ const LoginInput = () => {
           loginInfo={loginInfo}
           login={login}
           setLogin={setLogin}
-          // onClick={login === true ? handleLogin() : handleSignUp()}
         ></Button>
       </ButtonContainer>
     </Wrapper>

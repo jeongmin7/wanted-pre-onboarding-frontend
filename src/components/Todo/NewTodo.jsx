@@ -23,7 +23,8 @@ const NewTodo = () => {
           },
         }
       )
-      .then(() => window.location.reload());
+      .then(() => window.location.reload())
+      .catch((err) => alert(err.response.data.message));
   };
   return (
     <Wrapper>
