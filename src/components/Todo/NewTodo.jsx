@@ -45,9 +45,10 @@ const Wrapper = styled.div`
   margin-top: 3rem;
   margin-bottom: 2rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 `;
 const Input = styled.input`
-  width: 70%;
+  width: 60%;
   height: 2.5rem;
 `;

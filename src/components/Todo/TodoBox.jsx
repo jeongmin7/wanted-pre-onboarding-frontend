@@ -6,7 +6,8 @@ import TodoList from "./TodoList";
 const TodoBox = ({ todos }) => {
   return (
     <Wrapper>
-      <NewTodo todos={todos} />
+      <Title>Todo List</Title>
+      <NewTodo />
       <TodoList todos={todos} />
     </Wrapper>
   );
@@ -15,10 +16,18 @@ const TodoBox = ({ todos }) => {
 export default TodoBox;
 
 const Wrapper = styled.div`
-  width: 45%;
-  height: 50%;
+  width: 30rem;
+  height: 100vh;
   background-color: #fff;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  padding: 2rem;
+`;
+const Title = styled.div`
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  font-family: "Nerko One", cursive;
 `;

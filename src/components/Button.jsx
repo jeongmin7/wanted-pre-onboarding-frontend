@@ -2,9 +2,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Button = ({ keyword, disabled, loginInfo, login }) => {
+const Button = ({ keyword, disabled, loginInfo, login, setLogin }) => {
   const navigate = useNavigate();
-
   const handleLogin = () => {
     if (loginInfo.email && loginInfo.password) {
       let { email, password } = loginInfo;
@@ -19,7 +18,7 @@ const Button = ({ keyword, disabled, loginInfo, login }) => {
         .then((res) =>
           localStorage.setItem("accessToken", res.data.access_token)
         )
-        .then(() => navigate("/todo"));
+        .then(() => window.location.reload());
     }
   };
 
@@ -35,7 +34,8 @@ const Button = ({ keyword, disabled, loginInfo, login }) => {
             headers: { "Content-Type": "application/json" },
           }
         )
-        .then(() => alert("회원가입이 완료되었습니다!"));
+        .then(() => alert("회원가입이 완료되었습니다!"))
+        .then(() => navigate("/"));
     }
   };
   return (

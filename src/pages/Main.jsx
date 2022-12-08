@@ -11,22 +11,14 @@ const Main = () => {
     }
   }, [navigate]);
   return (
-    <Wrapper>
+    <div>
       <Login />
-    </Wrapper>
+    </div>
   );
 };
 
 export default Main;
 
-const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #b9e0ff;
-`;
 // 1. 로그인 / 회원가입
 // / 경로에 로그인 / 회원가입 기능을 개발해주세요
 // 페이지 안에 이메일 입력창, 비밀번호 입력창, 제출 버튼이 포함된 형태로 구성해주세요
