@@ -55,7 +55,7 @@ export default Button;
 
 const Btn = styled.button`
   width: 100%;
-  background-color: #1515ff;
+  background-color: #6c4ab6;
   color: #fff;
   font-size: 1rem;
   font-weight: 700;

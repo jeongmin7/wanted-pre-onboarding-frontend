@@ -1,17 +1,53 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import TodoBox from "../components/Todo/TodoBox";
+import styled from "styled-components";
+import axios from "axios";
 
 const Todo = () => {
   const navigate = useNavigate();
+  const token = localStorage.getItem("accessToken");
+  const [todos, setTodos] = useState([]);
+
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
       navigate("/");
     }
   }, []);
-  return <div>Todo</div>;
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_BASE_URL}/todos`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => setTodos(res.data));
+  }, []);
+  return (
+    <Wrapper>
+      <Title>Todo</Title>
+      <TodoBox todos={todos} />
+    </Wrapper>
+  );
 };
 
 export default Todo;
+
+const Wrapper = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #b9e0ff;
+`;
+
+const Title = styled.div`
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+`;
 // :: 2. 투두 리스트
 // Assignment4
 // /todo경로에 접속하면 투두 리스트의 목록을 볼 수 있도록 해주세요
