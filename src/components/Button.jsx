@@ -35,7 +35,7 @@ const Button = ({ keyword, disabled, loginInfo, login, setLogin }) => {
           }
         )
         .then(() => alert("회원가입이 완료되었습니다!"))
-        .then(() => navigate("/wanted-pre-onboarding-frontend"))
+        .then(() => navigate("/"))
         .catch((err) => alert(err.response.data.message));
     }
   };
