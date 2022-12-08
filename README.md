@@ -7,7 +7,7 @@
 
 ## 배포
 
-[배포사이트](https://habitual-ocean.surge.sh/)
+[배포사이트](https://uninterested-sister.surge.sh/)
 
 ## 완성된 GIF
 
