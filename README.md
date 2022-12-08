@@ -3,11 +3,13 @@
 1.  `git clone git@github.com:jeongmin7/wanted-pre-onboarding-frontend.git`
 2.  압축 파일을 푼 뒤 폴더 주소로 터미널에 `npm install && npm start` 입력
 
+
 <br/>
 
 ## 배포
 
 [배포사이트](https://uninterested-sister.surge.sh/)
+
 
 ## 완성된 GIF
 
@@ -32,6 +34,7 @@
     </div>
 </details>
 
+
 <details>
   <summary>todo 삭제 </summary>
     <div markdown="1">
@@ -39,12 +42,14 @@
     </div>
 </details>
 
+
 <details>
   <summary>todo 수정</summary>
     <div markdown="1">
 여기
     </div>
 </details>
+
 
 <details>
   <summary>todo완료 여부 </summary>
