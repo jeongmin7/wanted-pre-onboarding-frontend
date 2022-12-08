@@ -1,3 +1,62 @@
+## 프로젝트의 실행 방법
+
+1.  `git clone git@github.com:jeongmin7/wanted-pre-onboarding-frontend.git`
+2.  압축 파일을 푼 뒤 폴더 주소로 터미널에 `npm install && npm start` 입력
+
+<br/>
+
+## 배포
+
+[배포사이트](https://habitual-ocean.surge.sh/)
+
+## 완성된 GIF
+
+<details>
+  <summary>로그인 </summary>
+    <div markdown="1">
+       여기
+    </div>
+</details>
+
+<details>
+  <summary>회원가입</summary>
+    <div markdown="1">
+        여기
+    </div>
+</details>
+
+<details>
+  <summary>todo 추가</summary>
+    <div markdown="1">
+        여기
+    </div>
+</details>
+
+<details>
+  <summary>todo 삭제 </summary>
+    <div markdown="1">
+        여기
+    </div>
+</details>
+
+<details>
+  <summary>todo 수정</summary>
+    <div markdown="1">
+여기
+    </div>
+</details>
+
+<details>
+  <summary>todo완료 여부 </summary>
+    <div markdown="1">
+여기
+    </div>
+</details>
+
+<br/>
+
+## 기능
+
 1. 로그인 / 회원가입
    / 경로에 로그인 / 회원가입 기능을 개발해주세요
    페이지 안에 이메일 입력창, 비밀번호 입력창, 제출 버튼이 포함된 형태로 구성해주세요
@@ -17,7 +76,7 @@
 
 :: 2. 투두 리스트
 
-- [ ] Assignment4
+- [x] Assignment4
   - [x] /todo경로에 접속하면 투두 리스트의 목록을 볼 수 있도록 해주세요
   - [x] 리스트 페이지에는 투두 리스트의 내용과 완료 여부가 표시되어야 합니다.
   - [x] 리스트 페이지에는 입력창과 추가 버튼이 있고, 추가 버튼을 누르면 입력창의 내용이 새로운 투두 리스트로 추가되도록 해주세요
