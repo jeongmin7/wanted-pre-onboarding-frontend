@@ -14,7 +14,7 @@ const Todo = () => {
     if (!localStorage.getItem("accessToken")) {
       navigate("/");
     }
-  }, []);
+  }, [navigate]);
 
   useEffect(() => {
     axios
@@ -24,7 +24,7 @@ const Todo = () => {
         },
       })
       .then((res) => setTodos(res.data));
-  }, []);
+  }, [token]);
 
   return (
     <Wrapper>
