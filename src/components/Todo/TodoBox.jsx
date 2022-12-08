@@ -4,7 +4,6 @@ import NewTodo from "./NewTodo";
 import TodoList from "./TodoList";
 
 const TodoBox = ({ todos }) => {
-  console.log(todos);
   return (
     <Wrapper>
       <NewTodo todos={todos} />
@@ -22,5 +21,4 @@ const Wrapper = styled.div`
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 `;
