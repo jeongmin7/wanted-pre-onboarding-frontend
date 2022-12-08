@@ -1,45 +1,62 @@
-
 ## 프로젝트의 실행 방법
-  1.  [Code버튼 클릭 > DownloadZip 클릭] 후 압축 파일 다운 받기
-  2.  압축 파일을 푼 뒤 폴더 주소로 터미널에 `npm install && npm start` 입력
+
+1.  `git clone git@github.com:jeongmin7/wanted-pre-onboarding-frontend.git`
+2.  압축 파일을 푼 뒤 폴더 주소로 터미널에 `npm install && npm start` 입력
 
 <br/>
 
-## 배포 
+## 배포
 
-
+[배포사이트](https://habitual-ocean.surge.sh/)
 
 ## 완성된 GIF
 
-> **관리자 페이지**
-
 <details>
-  <summary>관리자 페이지 로그인 </summary>
+  <summary>로그인 </summary>
     <div markdown="1">
        여기
     </div>
 </details>
 
-
-> **사용자 페이지**
-
 <details>
-  <summary>사용자페이지 상품목록, 업데이트 내역</summary>
+  <summary>회원가입</summary>
     <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413498531851/Sep-22-2022_16-13-33.gif" width='600'/>
+        여기
     </div>
 </details>
 
 <details>
-  <summary>사용자 페이지 FAQ</summary>
+  <summary>todo 추가</summary>
     <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413947310101/Sep-22-2022_16-13-42.gif" width='600'/>
+        여기
+    </div>
+</details>
+
+<details>
+  <summary>todo 삭제 </summary>
+    <div markdown="1">
+        여기
+    </div>
+</details>
+
+<details>
+  <summary>todo 수정</summary>
+    <div markdown="1">
+여기
+    </div>
+</details>
+
+<details>
+  <summary>todo완료 여부 </summary>
+    <div markdown="1">
+여기
     </div>
 </details>
 
 <br/>
 
 ## 기능
+
 1. 로그인 / 회원가입
    / 경로에 로그인 / 회원가입 기능을 개발해주세요
    페이지 안에 이메일 입력창, 비밀번호 입력창, 제출 버튼이 포함된 형태로 구성해주세요
@@ -59,7 +76,7 @@
 
 :: 2. 투두 리스트
 
-- [ ] Assignment4
+- [x] Assignment4
   - [x] /todo경로에 접속하면 투두 리스트의 목록을 볼 수 있도록 해주세요
   - [x] 리스트 페이지에는 투두 리스트의 내용과 완료 여부가 표시되어야 합니다.
   - [x] 리스트 페이지에는 입력창과 추가 버튼이 있고, 추가 버튼을 누르면 입력창의 내용이 새로운 투두 리스트로 추가되도록 해주세요
@@ -68,5 +85,3 @@
   - [x] 투두 리스트의 개별 아이템 우측에 수정버튼이 존재하고 해당 버튼을 누르면 수정모드가 활성화되고 투두 리스트의 내용을 수정할 수 있도록 해주세요
   - [x] 수정모드에서는 개별 아이템의 우측에 제출버튼과 취소버튼이 표시되며 해당 버튼을 통해서 수정 내용을 제출하거나 수정을 취소할 수 있도록 해주세요
   - [x] 투두 리스트의 개별 아이템 우측에 삭제버튼이 존재하고 해당 버튼을 누르면 투두 리스트가 삭제되도록 해주세요
-
-
