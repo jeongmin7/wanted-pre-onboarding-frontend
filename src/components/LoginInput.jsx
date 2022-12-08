@@ -62,6 +62,7 @@ const LoginInput = () => {
           disabled={!validEmail || !validPassword}
           loginInfo={loginInfo}
           login={login}
+          setLogin={setLogin}
           // onClick={login === true ? handleLogin() : handleSignUp()}
         ></Button>
       </ButtonContainer>

@@ -1,11 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
+import styled from "styled-components";
 
 const Todo = ({ todo, token }) => {
   const [editMode, setEditMode] = useState(false);
   const [changedTodo, setChangedTodo] = useState(todo.todo);
-  console.log(todo);
-  console.log(todo.isCompleted);
   const handleEditMode = () => {
     setEditMode(!editMode);
   };
@@ -59,34 +58,80 @@ const Todo = ({ todo, token }) => {
   return (
     <div>
       {editMode ? (
-        <div>
+        <Wrapper>
           <input
             type="checkbox"
-            checked={todo.isCompleted}
+            defaultChecked={todo.isCompleted}
             onClick={() => {
               updateIsCompleted(todo.id);
             }}
           />
-          <input type="text" defaultValue={todo.todo} onChange={onChange} />
-          <button onClick={() => updateTodo(todo.id)}>확인</button>
-          <button onClick={handleEditMode}>취소</button>
-        </div>
+          <ContentWrapper>
+            <Input type="text" defaultValue={todo.todo} onChange={onChange} />
+            <ButtonsWrapper>
+              <Button onClick={() => updateTodo(todo.id)}>확인</Button>
+              <Button onClick={handleEditMode}>취소</Button>
+            </ButtonsWrapper>
+          </ContentWrapper>
+        </Wrapper>
       ) : (
-        <div>
+        <Wrapper>
           <input
             type="checkbox"
-            checked={todo.isCompleted}
+            defaultChecked={todo.isCompleted}
             onClick={() => {
               updateIsCompleted(todo.id);
             }}
           />
-          <div>{todo.todo}</div>
-          <button onClick={handleEditMode}>수정</button>
-          <button onClick={() => deleteTodo(todo.id)}>삭제</button>
-        </div>
+          <ContentWrapper>
+            {todo.isCompleted === true ? (
+              <IsDone>{todo.todo}</IsDone>
+            ) : (
+              <div>{todo.todo}</div>
+            )}
+            <ButtonsWrapper>
+              <Button onClick={handleEditMode}>수정</Button>
+              <Button onClick={() => deleteTodo(todo.id)}>삭제</Button>
+            </ButtonsWrapper>
+          </ContentWrapper>
+        </Wrapper>
       )}
     </div>
   );
 };
 
 export default Todo;
+const Wrapper = styled.div`
+  width: 25rem;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  font-size: 1.5rem;
+`;
+
+const ContentWrapper = styled.div`
+  border: 1px solid #333;
+  border-radius: 5px;
+  display: flex;
+  width: 80%;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const ButtonsWrapper = styled.div`
+  display: flex;
+`;
+const Button = styled.div`
+  margin-right: 0.3rem;
+  border-radius: 5px;
+  padding: 0.3rem;
+  background-color: #8d72e1;
+  color: #fff;
+`;
+const Input = styled.input`
+  height: 1.3rem;
+`;
+const IsDone = styled.div`
+  text-decoration: line-through;
+`;

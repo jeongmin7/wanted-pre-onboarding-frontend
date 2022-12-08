@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import TodoBox from "../components/Todo/TodoBox";
 import styled from "styled-components";
 import axios from "axios";
+import TodoHeader from "../components/Todo/TodoHeader";
 
 const Todo = () => {
   const navigate = useNavigate();
@@ -24,16 +25,13 @@ const Todo = () => {
       })
       .then((res) => setTodos(res.data));
   }, []);
-  const handleLogout = () => {
-    localStorage.removeItem("accessToken");
-    window.location.reload();
-  };
 
   return (
     <Wrapper>
-      <div onClick={handleLogout}>로그아웃</div>
-      <Title>Todo</Title>
-      <TodoBox todos={todos} />
+      <TodoHeader />
+      <TodoBoxWrapper>
+        <TodoBox todos={todos} />
+      </TodoBoxWrapper>
     </Wrapper>
   );
 };
@@ -41,19 +39,17 @@ const Todo = () => {
 export default Todo;
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: #b9e0ff;
+  font-family: "Nanum Pen Script", cursive;
 `;
 
-const Title = styled.div`
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+const TodoBoxWrapper = styled.div`
+  margin-top: 5rem;
 `;
+
 // :: 2. 투두 리스트
 // Assignment4
 // /todo경로에 접속하면 투두 리스트의 목록을 볼 수 있도록 해주세요

@@ -22,6 +22,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: 8px 8px 10px #d0d0d0;
+  margin-top: 2rem;
 `;
 //Assignment1
 // 이메일과 비밀번호의 유효성 검사기능을 구현해주세요
