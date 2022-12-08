@@ -24,8 +24,14 @@ const Todo = () => {
       })
       .then((res) => setTodos(res.data));
   }, []);
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    window.location.reload();
+  };
+
   return (
     <Wrapper>
+      <div onClick={handleLogout}>로그아웃</div>
       <Title>Todo</Title>
       <TodoBox todos={todos} />
     </Wrapper>
