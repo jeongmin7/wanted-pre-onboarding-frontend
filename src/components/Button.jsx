@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { api } from "../api/index";
 
 const Button = ({ keyword, disabled, loginInfo, login }) => {
   const navigate = useNavigate();
