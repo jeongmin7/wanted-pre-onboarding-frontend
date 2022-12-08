@@ -1,10 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import TodoBox from "../components/Todo/TodoBox";
+import styled from "styled-components";
+import axios from "axios";
+import TodoHeader from "../components/Todo/TodoHeader";
 
 const Todo = () => {
-  return <div>Todo</div>;
+  const navigate = useNavigate();
+  const token = localStorage.getItem("accessToken");
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    if (!localStorage.getItem("accessToken")) {
+      navigate("/");
+    }
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_BASE_URL}/todos`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => setTodos(res.data));
+  }, []);
+
+  return (
+    <Wrapper>
+      <TodoHeader />
+      <TodoBoxWrapper>
+        <TodoBox todos={todos} />
+      </TodoBoxWrapper>
+    </Wrapper>
+  );
 };
 
 export default Todo;
+
+const Wrapper = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Nanum Pen Script", cursive;
+`;
+
+const TodoBoxWrapper = styled.div`
+  margin-top: 5rem;
+`;
+
 // :: 2. 투두 리스트
 // Assignment4
 // /todo경로에 접속하면 투두 리스트의 목록을 볼 수 있도록 해주세요

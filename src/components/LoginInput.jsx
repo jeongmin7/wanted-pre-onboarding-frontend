@@ -1,7 +1,5 @@
-import axios from "axios";
 import React, { useState } from "react";
 import styled from "styled-components";
-import { api } from "../api/index";
 import Button from "./Button";
 import { BiUser } from "react-icons/bi";
 import { MdOutlinePassword } from "react-icons/md";
@@ -18,25 +16,6 @@ const LoginInput = () => {
   const [validEmail, setValidEmail] = useState(false);
   const [validPassword, setValidPassword] = useState(false);
   const [login, setLogin] = useState(true);
-
-  // const handleLogin = () => {
-  //   if (loginInfo.email && loginInfo.password) {
-  //     let { email, password } = loginInfo;
-  //     axios
-  //       .post(
-  //         `${api}/auth/signin`,
-  //         { email: email, password: password },
-  //         {
-  //           headers: { "Content-Type": "application/json" },
-  //         }
-  //       )
-  //       .then((res) => console.log(res));
-  //   }
-  // };
-
-  // const handleSignUp = () => {
-  //   console.log("회원가입");
-  // };
 
   const handleInputValue = (key) => (e) => {
     setLoginInfo({ ...loginInfo, [key]: e.target.value });
@@ -83,7 +62,7 @@ const LoginInput = () => {
           disabled={!validEmail || !validPassword}
           loginInfo={loginInfo}
           login={login}
-          // onClick={login === true ? handleLogin() : handleSignUp()}
+          setLogin={setLogin}
         ></Button>
       </ButtonContainer>
     </Wrapper>

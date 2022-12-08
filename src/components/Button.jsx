@@ -1,24 +1,44 @@
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Button = ({ keyword, disabled, loginInfo, login }) => {
+const Button = ({ keyword, disabled, loginInfo, login, setLogin }) => {
+  const navigate = useNavigate();
   const handleLogin = () => {
-    // if (loginInfo.email && loginInfo.password) {
-    //   let { email, password } = loginInfo;
-    //   axios
-    //     .post(
-    //       `${api}/auth/signin`,
-    //       { email: email, password: password },
-    //       {
-    //         headers: { "Content-Type": "application/json" },
-    //       }
-    //     )
-    //     .then((res) => console.log(res));
-    // }
-    console.log("login");
+    if (loginInfo.email && loginInfo.password) {
+      let { email, password } = loginInfo;
+      axios
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/auth/signin`,
+          { email: email, password: password },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        )
+        .then((res) =>
+          localStorage.setItem("accessToken", res.data.access_token)
+        )
+        .then(() => window.location.reload())
+        .catch((err) => alert(err.response.data.message));
+    }
   };
 
   const handleSignUp = () => {
-    console.log("회원가입");
+    if (loginInfo.email && loginInfo.password) {
+      let { email, password } = loginInfo;
+
+      axios
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/auth/signup`,
+          { email: email, password: password },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        )
+        .then(() => alert("회원가입이 완료되었습니다!"))
+        .then(() => navigate("/"))
+        .catch((err) => alert(err.response.data.message));
+    }
   };
   return (
     <div>
@@ -36,7 +56,7 @@ export default Button;
 
 const Btn = styled.button`
   width: 100%;
-  background-color: #1515ff;
+  background-color: #6c4ab6;
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
