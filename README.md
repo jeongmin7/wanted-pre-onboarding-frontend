@@ -1,6 +1,6 @@
 
 ## 프로젝트의 실행 방법
-  1.  [Code버튼 클릭 > DownloadZip 클릭] 후 압축 파일 다운 받기
+  1.  `git clone git@github.com:jeongmin7/wanted-pre-onboarding-frontend.git`
   2.  압축 파일을 푼 뒤 폴더 주소로 터미널에 `npm install && npm start` 입력
 
 <br/>
@@ -10,93 +10,47 @@
 
 ## 완성된 GIF
 
-> **로그인**
-
 <details>
-  <summary>관리자 페이지 로그인 </summary>
+  <summary>로그인 </summary>
     <div markdown="1">
        여기
     </div>
 </details>
 
-
-> **회원가입**
-
 <details>
-  <summary>사용자페이지 상품목록, 업데이트 내역</summary>
+  <summary>회원가입</summary>
     <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413498531851/Sep-22-2022_16-13-33.gif" width='600'/>
+        여기
     </div>
 </details>
 
 <details>
-  <summary>사용자 페이지 FAQ</summary>
+  <summary>todo 추가</summary>
     <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413947310101/Sep-22-2022_16-13-42.gif" width='600'/>
-    </div>
-</details>
-
-> **Todo 추가**
-
-<details>
-  <summary>사용자페이지 상품목록, 업데이트 내역</summary>
-    <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413498531851/Sep-22-2022_16-13-33.gif" width='600'/>
+        여기
     </div>
 </details>
 
 <details>
-  <summary>사용자 페이지 FAQ</summary>
+  <summary>todo 삭제 </summary>
     <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413947310101/Sep-22-2022_16-13-42.gif" width='600'/>
+        여기
     </div>
 </details>
 
-> **Todo 삭제**
 
 <details>
-  <summary>사용자페이지 상품목록, 업데이트 내역</summary>
+  <summary>todo 수정</summary>
     <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413498531851/Sep-22-2022_16-13-33.gif" width='600'/>
+여기
     </div>
 </details>
 
-<details>
-  <summary>사용자 페이지 FAQ</summary>
-    <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413947310101/Sep-22-2022_16-13-42.gif" width='600'/>
-    </div>
-</details>
-
-> **Todo 수정**
 
 <details>
-  <summary>사용자페이지 상품목록, 업데이트 내역</summary>
+  <summary>todo완료 여부 </summary>
     <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413498531851/Sep-22-2022_16-13-33.gif" width='600'/>
-    </div>
-</details>
-
-<details>
-  <summary>사용자 페이지 FAQ</summary>
-    <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413947310101/Sep-22-2022_16-13-42.gif" width='600'/>
-    </div>
-</details>
-
-> **완료 여부 수정**
-
-<details>
-  <summary>사용자페이지 상품목록, 업데이트 내역</summary>
-    <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413498531851/Sep-22-2022_16-13-33.gif" width='600'/>
-    </div>
-</details>
-
-<details>
-  <summary>사용자 페이지 FAQ</summary>
-    <div markdown="1">
-        <img src="https://cdn.discordapp.com/attachments/1016940382061346880/1022405413947310101/Sep-22-2022_16-13-42.gif" width='600'/>
+여기
     </div>
 </details>
 
