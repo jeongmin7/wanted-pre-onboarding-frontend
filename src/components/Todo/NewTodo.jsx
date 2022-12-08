@@ -12,16 +12,18 @@ const NewTodo = () => {
   };
 
   const handleAdd = () => {
-    axios.post(
-      `${process.env.REACT_APP_API_BASE_URL}/todos`,
-      { todo: todo }, //TODO: 내용
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    axios
+      .post(
+        `${process.env.REACT_APP_API_BASE_URL}/todos`,
+        { todo: todo }, //TODO: 내용
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then(() => window.location.reload());
   };
   return (
     <Wrapper>

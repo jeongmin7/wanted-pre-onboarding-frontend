@@ -4,6 +4,7 @@ import NewTodo from "./NewTodo";
 import TodoList from "./TodoList";
 
 const TodoBox = ({ todos }) => {
+  console.log(todos);
   return (
     <Wrapper>
       <NewTodo todos={todos} />
