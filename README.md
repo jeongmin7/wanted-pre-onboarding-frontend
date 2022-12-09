@@ -8,7 +8,7 @@
 
 ## 배포
 
-[배포사이트](https://gaping-bikes.surge.sh/todo)
+[배포사이트](https://energetic-goldfish.surge.sh/)
 
 
 ## 완성된 GIF
