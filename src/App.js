@@ -14,7 +14,7 @@ function App() {
             element={<Main />}
           ></Route>
           <Route
-            path="wanted-pre-onboarding-frontend/todo"
+            path="/wanted-pre-onboarding-frontend/todo"
             element={<Todo />}
           ></Route>
           <Route path="*" element={<NotFound />}></Route>

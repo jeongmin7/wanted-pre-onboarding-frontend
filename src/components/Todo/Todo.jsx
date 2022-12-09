@@ -5,6 +5,8 @@ import styled from "styled-components";
 const Todo = ({ todo, token, setTodos, todos }) => {
   const [editMode, setEditMode] = useState(false);
   const [changedTodo, setChangedTodo] = useState(todo.todo);
+  const [isDone, setIsDone] = useState(todo.isCompleted);
+
   const handleEditMode = () => {
     setEditMode(!editMode);
   };
@@ -27,6 +29,8 @@ const Todo = ({ todo, token, setTodos, todos }) => {
       .put(
         `${process.env.REACT_APP_API_BASE_URL}/todos/${id}`,
         { todo: changedTodo, isCompleted: todo.isCompleted },
+        // { todo: changedTodo, isCompleted: isDone },
+        //
 
         {
           headers: {
@@ -39,7 +43,8 @@ const Todo = ({ todo, token, setTodos, todos }) => {
         setTodos(
           todos.map((todo) =>
             id === todo.id
-              ? { ...todo, todo: changedTodo, isCompleted: todo.isCompleted }
+              ? // ? { ...todo, todo: changedTodo, isCompleted: todo.isCompleted }
+                { ...todo, todo: changedTodo, isCompleted: isDone }
               : todo
           )
         );
@@ -49,12 +54,13 @@ const Todo = ({ todo, token, setTodos, todos }) => {
       })
       .catch((err) => alert(err.response.data.message));
   };
-  console.log(todos);
   const updateIsCompleted = async (id) => {
+    setIsDone(!isDone);
     await axios
       .put(
         `${process.env.REACT_APP_API_BASE_URL}/todos/${id}`,
-        { todo: todo.todo, isCompleted: !todo.isCompleted },
+        // { todo: todo.todo, isCompleted: !todo.isCompleted },
+        { todo: todo.todo, isCompleted: isDone },
 
         {
           headers: {
@@ -71,7 +77,8 @@ const Todo = ({ todo, token, setTodos, todos }) => {
         <Wrapper>
           <input
             type="checkbox"
-            defaultChecked={todo.isCompleted}
+            // defaultChecked={todo.isCompleted}
+            defaultChecked={isDone}
             onClick={() => {
               updateIsCompleted(todo.id);
             }}
@@ -88,13 +95,15 @@ const Todo = ({ todo, token, setTodos, todos }) => {
         <Wrapper>
           <input
             type="checkbox"
-            defaultChecked={todo.isCompleted}
+            // defaultChecked={todo.isCompleted}
+            defaultChecked={isDone}
             onClick={() => {
               updateIsCompleted(todo.id);
             }}
           />
           <ContentWrapper>
-            {todo.isCompleted === true ? (
+            {/* {todo.isCompleted === true ? ( */}
+            {isDone === true ? (
               <IsDone>{todo.todo}</IsDone>
             ) : (
               <div>{todo.todo}</div>
