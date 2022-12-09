@@ -1,11 +1,11 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import TodoButton from "./TodoButton";
 
-const NewTodo = () => {
+const NewTodo = ({ todos, setTodos }) => {
   const token = localStorage.getItem("accessToken");
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState([]);
 
   const handleChange = (e) => {
     setTodo(e.target.value);
@@ -23,7 +23,7 @@ const NewTodo = () => {
           },
         }
       )
-      .then(() => window.location.reload())
+      .then((res) => setTodos(todos.concat(res.data)))
       .catch((err) => alert(err.response.data.message));
   };
   return (

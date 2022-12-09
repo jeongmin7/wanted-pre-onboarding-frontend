@@ -3,12 +3,12 @@ import styled from "styled-components";
 import NewTodo from "./NewTodo";
 import TodoList from "./TodoList";
 
-const TodoBox = ({ todos }) => {
+const TodoBox = ({ todos, setTodos }) => {
   return (
     <Wrapper>
       <Title>Todo List</Title>
-      <NewTodo />
-      <TodoList todos={todos} />
+      <NewTodo todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </Wrapper>
   );
 };

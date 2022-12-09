@@ -2,32 +2,35 @@ import axios from "axios";
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const Todo = ({ todo, token }) => {
+const Todo = ({ todo, token, setTodos, todos }) => {
   const [editMode, setEditMode] = useState(false);
   const [changedTodo, setChangedTodo] = useState(todo.todo);
+  const [isDone, setIsDone] = useState(todo.isCompleted);
+
   const handleEditMode = () => {
     setEditMode(!editMode);
   };
   const onChange = (e) => {
     setChangedTodo(e.target.value);
   };
-  const deleteTodo = (id) => {
-    axios
+  const deleteTodo = async (id) => {
+    await axios
       .delete(`${process.env.REACT_APP_API_BASE_URL}/todos/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((res) => console.log(res))
-      .then(() => window.location.reload())
-      .catch((err) => alert(err.response.data.message));
+      .then(() => setTodos(todos.filter((todo) => todo.id !== id)));
+    // .catch((err) => alert(err.response.data.message));
   };
 
-  const updateTodo = (id) => {
-    axios
+  const updateTodo = async (id) => {
+    await axios
       .put(
         `${process.env.REACT_APP_API_BASE_URL}/todos/${id}`,
         { todo: changedTodo, isCompleted: todo.isCompleted },
+        // { todo: changedTodo, isCompleted: isDone },
+        //
 
         {
           headers: {
@@ -37,16 +40,27 @@ const Todo = ({ todo, token }) => {
         }
       )
       .then(() => {
-        window.location.reload();
+        setTodos(
+          todos.map((todo) =>
+            id === todo.id
+              ? // ? { ...todo, todo: changedTodo, isCompleted: todo.isCompleted }
+                { ...todo, todo: changedTodo, isCompleted: isDone }
+              : todo
+          )
+        );
       })
-      .then(() => window.location.reload())
+      .then(() => {
+        setEditMode(!editMode);
+      })
       .catch((err) => alert(err.response.data.message));
   };
-  const updateIsCompleted = (id) => {
-    axios
+  const updateIsCompleted = async (id) => {
+    setIsDone(!isDone);
+    await axios
       .put(
         `${process.env.REACT_APP_API_BASE_URL}/todos/${id}`,
-        { todo: todo.todo, isCompleted: !todo.isCompleted },
+        // { todo: todo.todo, isCompleted: !todo.isCompleted },
+        { todo: todo.todo, isCompleted: isDone },
 
         {
           headers: {
@@ -55,7 +69,6 @@ const Todo = ({ todo, token }) => {
           },
         }
       )
-      .then(() => window.location.reload())
       .catch((err) => alert(err.response.data.message));
   };
   return (
@@ -64,7 +77,8 @@ const Todo = ({ todo, token }) => {
         <Wrapper>
           <input
             type="checkbox"
-            defaultChecked={todo.isCompleted}
+            // defaultChecked={todo.isCompleted}
+            defaultChecked={isDone}
             onClick={() => {
               updateIsCompleted(todo.id);
             }}
@@ -81,13 +95,15 @@ const Todo = ({ todo, token }) => {
         <Wrapper>
           <input
             type="checkbox"
-            defaultChecked={todo.isCompleted}
+            // defaultChecked={todo.isCompleted}
+            defaultChecked={isDone}
             onClick={() => {
               updateIsCompleted(todo.id);
             }}
           />
           <ContentWrapper>
-            {todo.isCompleted === true ? (
+            {/* {todo.isCompleted === true ? ( */}
+            {isDone === true ? (
               <IsDone>{todo.todo}</IsDone>
             ) : (
               <div>{todo.todo}</div>
