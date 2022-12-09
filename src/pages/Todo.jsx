@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import TodoBox from "../components/Todo/TodoBox";
 import styled from "styled-components";
 import axios from "axios";
-import TodoHeader from "../components/Todo/TodoHeader";
 
 const Todo = () => {
   const navigate = useNavigate();
@@ -12,9 +11,9 @@ const Todo = () => {
 
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
-      navigate("/");
+      navigate("/wanted-pre-onboarding-frontend");
     }
-  }, []);
+  }, [navigate]);
 
   useEffect(() => {
     axios
@@ -24,13 +23,12 @@ const Todo = () => {
         },
       })
       .then((res) => setTodos(res.data));
-  }, []);
+  }, [token]);
 
   return (
     <Wrapper>
-      <TodoHeader />
       <TodoBoxWrapper>
-        <TodoBox todos={todos} />
+        <TodoBox todos={todos} setTodos={setTodos} />
       </TodoBoxWrapper>
     </Wrapper>
   );
@@ -43,7 +41,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Nanum Pen Script", cursive;
 `;
 
 const TodoBoxWrapper = styled.div`
