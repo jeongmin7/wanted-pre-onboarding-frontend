@@ -11,7 +11,7 @@ const Todo = () => {
 
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
-      navigate("/");
+      navigate("/wanted-pre-onboarding-frontend");
     }
   }, []);
 
@@ -41,7 +41,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Nanum Pen Script", cursive;
 `;
 
 const TodoBoxWrapper = styled.div`

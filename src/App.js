@@ -9,9 +9,15 @@ function App() {
     <Wrapper>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main />}></Route>
-          <Route path="/todo" element={<Todo />}></Route>
-          <Route path="*" element={<NotFound />}></Route>{" "}
+          <Route
+            path="/wanted-pre-onboarding-frontend"
+            element={<Main />}
+          ></Route>
+          <Route
+            path="wanted-pre-onboarding-frontend/todo"
+            element={<Todo />}
+          ></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
     </Wrapper>

@@ -21,7 +21,7 @@ const LoginInput = () => {
     setLoginInfo({ ...loginInfo, [key]: e.target.value });
     const emailRegex = /@/;
     if (!emailRegex.test(loginInfo.email)) {
-      setEmailError("이메일 형식을 확인해 주세요");
+      setEmailError("이메일에는 @가 포함되어야 합니다");
     } else {
       setEmailError("");
       setValidEmail(true);
