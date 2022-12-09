@@ -8,7 +8,7 @@
 
 ## 배포
 
-[배포사이트](https://energetic-goldfish.surge.sh/)
+[배포사이트](https://jeongmin7.github.io/wanted-pre-onboarding-frontend)
 
 
 ## 완성된 GIF
@@ -16,21 +16,21 @@
 <details>
   <summary>로그인 </summary>
     <div markdown="1">
-       여기
+       ![로그인](https://user-images.githubusercontent.com/91598778/206627927-9afe7c68-cb8c-4f99-abd0-34770c8a7fe6.gif)
     </div>
 </details>
 
 <details>
   <summary>회원가입</summary>
     <div markdown="1">
-        여기
+       ![회원가입](https://user-images.githubusercontent.com/91598778/206627937-e6a68836-40cd-486e-b299-b04d40e89897.gif)
     </div>
 </details>
 
 <details>
   <summary>todo 추가</summary>
     <div markdown="1">
-        여기
+        ![추가하기](https://user-images.githubusercontent.com/91598778/206627950-2d8c23cc-bdd4-4987-aedf-bd0b430b21db.gif)
     </div>
 </details>
 
@@ -38,7 +38,7 @@
 <details>
   <summary>todo 삭제 </summary>
     <div markdown="1">
-        여기
+        ![삭제하기](https://user-images.githubusercontent.com/91598778/206627966-1f8b3105-d0c4-4cb5-b354-d4b2bba47b18.gif)
     </div>
 </details>
 
@@ -46,7 +46,7 @@
 <details>
   <summary>todo 수정</summary>
     <div markdown="1">
-여기
+    ![수정하기](https://user-images.githubusercontent.com/91598778/206627984-27c10991-c290-46b0-9736-537b436ee883.gif)
     </div>
 </details>
 
@@ -54,7 +54,7 @@
 <details>
   <summary>todo완료 여부 </summary>
     <div markdown="1">
-여기
+    ![완료여부](https://user-images.githubusercontent.com/91598778/206628025-0525f245-780b-4cd1-bfef-6489b2c492cd.gif)
     </div>
 </details>
 
