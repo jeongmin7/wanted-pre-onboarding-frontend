@@ -10,7 +10,7 @@
 
 [배포사이트](https://jeongmin7.github.io/wanted-pre-onboarding-frontend)
 
-## 구현 원리 ?
+## 구현 원리 ? 작성중
 
 ```
 📦src
@@ -34,18 +34,31 @@
  ┣ 📜index.css
  ┗ 📜index.js
 ```
-우선 페이지를 크게 3가지로 나누었습니다. 
+- 우선 페이지를 크게 3가지로 나누었습니다. 
+
+ ```
+ 1. 로그인과 회원가입을 하는 <Main/>
+ 2. todo를 관리하는 <Todo/>
+ 3. 그외의 주소를 입력했을 때  에러페이지인 <NotFound/>
+ ```
+ - 해당 페이지에서 사용되는 컴포넌트를 todo폴더와 auth폴더로 나누었어야 했는데 일단 저는 todo폴더만 따로 생성한 상태입니다.todo폴더 이외의 파일들은 모두 회원가입/ 로그인에 해당하는 파일들 입니다. 
+
+- api의 경우 .env 파일로만 처리했는데 api 모듈을 따로 분리하는 편이 좋을 것 같습니다.  
+- 토큰을 확인할 때 각 페이지에서 useEffect를 통해 처리해주었는데 다른 분들 처럼 분기처리할 때 토큰 유무로 분기하는 것이 더 좋은 코드인 것 같습니다. 
+
+- 로그인과 회원가입의 경우 ui가 동일하기 때문에 따로 분기하지 않고 하나의 경로로 관리하였습니다. const [login, setLogin] = useState(true);로 상태를 관리하여 login이 true일 경우 로그인을 false의 경우 회원가입을 할 수 있도록 button컴포넌트에 props로 넘겨주어 처리하였습니다. 
 
 ```
-로그인과 회원가입을 하는 <Main/>
+<Button  
+disabled={!validEmail || !validPassword}
+loginInfo={loginInfo}
+login={login}
+setLogin={setLogin}
+></Button>
 ```
-```
-todo를 관리하는 <Todo/>
-```
-```
-그리고 그외의 주소를 입력했을 때  <NotFound/>
-```
-그리고 해당 페이지에서 사용되는 컴포넌트를 todo폴더와 auth폴더로 나누었어야 했는데 일단 저는 todo폴더만 따로 생성했고
+-todo의 경우 editmode를 state로 관리하여 수정버튼을 누르면 editmode로 변경되는데 editmode일 경우 수정할수 있는 input창과 체크박스가 나오며 editmode가 아닐 경우에는 todo값을 불러왔습니다.  
+
+
 ## 완성된 GIF
 
 <details>
@@ -61,16 +74,6 @@ todo를 관리하는 <Todo/>
        <img src= "https://user-images.githubusercontent.com/91598778/206627937-e6a68836-40cd-486e-b299-b04d40e89897.gif">
     </div>
 </details>
-로그인과 회원가입의 경우 ui가 동일하기 때문에 /라우터에서 관리하였습니다. const [login, setLogin] = useState(true);로 상태를 관리하여 login이 true일 경우 로그인을 false의 경우 회원가입을 할 수 있도록 button컴포넌트에 props로 넘겨주어 처리하였습니다. 
-
-```
-<Button  disabled={!validEmail || !validPassword}
-loginInfo={loginInfo}
-login={login}
-setLogin={setLogin}
-></Button>
-```
-        
 
 <details>
   <summary>todo 추가</summary>
