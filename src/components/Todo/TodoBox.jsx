@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import NewTodo from "./NewTodo";
-import TodoList from "./TodoList";
+import Todo from "./Todo";
 
 const TodoBox = ({ todos }) => {
+  const token = localStorage.getItem("accessToken");
   return (
     <Wrapper>
       <Title>Todo List</Title>
       <NewTodo />
-      <TodoList todos={todos} />
+      {todos &&
+        todos.map((todo) => <Todo key={todo.id} todo={todo} token={token} />)}
     </Wrapper>
   );
 };
