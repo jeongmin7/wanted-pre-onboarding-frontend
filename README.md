@@ -10,7 +10,40 @@
 
 [배포사이트](https://jeongmin7.github.io/wanted-pre-onboarding-frontend)
 
+```
+📦src
+ ┣ 📂components
+ ┃ ┣ 📂Todo
+ ┃ ┃ ┣ 📜NewTodo.jsx
+ ┃ ┃ ┣ 📜Todo.jsx
+ ┃ ┃ ┣ 📜TodoBox.jsx
+ ┃ ┃ ┣ 📜TodoButton.jsx
+ ┃ ┃ ┗ 📜TodoList.jsx
+ ┃ ┣ 📜Button.jsx
+ ┃ ┣ 📜Login.jsx
+ ┃ ┣ 📜LoginInput.jsx
+ ┃ ┗ 📜LoginStatus.jsx
+ ┣ 📂pages
+ ┃ ┣ 📜Main.jsx
+ ┃ ┣ 📜NotFound.jsx
+ ┃ ┗ 📜Todo.jsx
+ ┣ 📜App.css
+ ┣ 📜App.js
+ ┣ 📜index.css
+ ┗ 📜index.js
+```
+우선 페이지를 크게 3가지로 나누었습니다. 
 
+```
+로그인과 회원가입을 하는 <Main/>
+```
+```
+todo를 관리하는 <Todo/>
+```
+```
+그리고 그외의 주소를 입력했을 때  <NotFound/>
+```
+그리고 해당 페이지에서 사용되는 컴포넌트를 todo폴더와 auth폴더로 나누었어야 했는데 일단 저는 todo폴더만 따로 생성했고
 ## 완성된 GIF
 
 <details>
@@ -26,6 +59,16 @@
        <img src= "https://user-images.githubusercontent.com/91598778/206627937-e6a68836-40cd-486e-b299-b04d40e89897.gif">
     </div>
 </details>
+로그인과 회원가입의 경우 ui가 동일하기 때문에 /라우터에서 관리하였습니다. const [login, setLogin] = useState(true);로 상태를 관리하여 login이 true일 경우 로그인을 false의 경우 회원가입을 할 수 있도록 button컴포넌트에 props로 넘겨주어 처리하였습니다. 
+
+```
+<Button  disabled={!validEmail || !validPassword}
+loginInfo={loginInfo}
+login={login}
+setLogin={setLogin}
+></Button>
+```
+        
 
 <details>
   <summary>todo 추가</summary>
