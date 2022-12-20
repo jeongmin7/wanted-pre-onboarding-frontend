@@ -10,6 +10,8 @@
 
 [배포사이트](https://jeongmin7.github.io/wanted-pre-onboarding-frontend)
 
+## 구현 원리 ?
+
 ```
 📦src
  ┣ 📂components
