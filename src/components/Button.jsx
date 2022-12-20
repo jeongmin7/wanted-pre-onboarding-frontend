@@ -2,7 +2,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Button = ({ keyword, disabled, loginInfo, login, setLogin }) => {
+const Button = ({ disabled, loginInfo, login }) => {
   const navigate = useNavigate();
   const handleLogin = () => {
     if (loginInfo.email && loginInfo.password) {
@@ -46,7 +46,7 @@ const Button = ({ keyword, disabled, loginInfo, login, setLogin }) => {
         disabled={disabled}
         onClick={login === true ? () => handleLogin() : () => handleSignUp()}
       >
-        {keyword}
+        {login ? "로그인" : "회원가입"}
       </Btn>
     </div>
   );

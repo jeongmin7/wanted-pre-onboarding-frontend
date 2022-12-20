@@ -58,7 +58,7 @@ const LoginInput = () => {
       <ErrorMessage>{loginInfo.password ? passwordError : ""}</ErrorMessage>
       <ButtonContainer>
         <Button
-          keyword={login === true ? "로그인" : "회원가입"}
+          // keyword={login === true ? "로그인" : "회원가입"}
           disabled={!validEmail || !validPassword}
           loginInfo={loginInfo}
           login={login}
