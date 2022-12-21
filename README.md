@@ -63,6 +63,16 @@ loginInfo={loginInfo}
 login={login}
 setLogin={setLogin}
 ></Button>
+
+
+    <div>
+      <Btn
+        disabled={disabled}
+        onClick={login === true ? () => handleLogin() : () => handleSignUp()}
+      >
+        {keyword}
+      </Btn>
+    </div>
 ```
 - 유효성 검사의 경우 이번 과제에서 요구하는 조건만 만족했기 때문에 추후 수정이 필요할 것 같습니다. 
 4. CRUD
