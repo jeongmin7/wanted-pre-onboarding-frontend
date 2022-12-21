@@ -78,7 +78,36 @@ setLogin={setLogin}
 4. CRUD
 - todo의 경우 editmode를 state로 관리하여 수정버튼을 누르면 editmode로 변경되는데 editmode일 경우 수정할수 있는 input창과 체크박스가 나오며 editmode가 아닐 경우에는 todo값을 불러왔습니다.  
 - 과제 수행할 당시에는 결과물이 급해서 되돌아 보지 못했는데 지금 보니 대대적인 컴포넌트 수정이 필요할 것 같습니다..
-
+```
+ {editMode ? (
+        <Wrapper>
+          <input
+            type="checkbox"
+            // defaultChecked={todo.isCompleted}
+            defaultChecked={isDone}
+            onClick={() => {
+              updateIsCompleted(todo.id);
+            }}
+          />
+          <ContentWrapper>
+            <Input type="text" defaultValue={todo.todo} onChange={onChange} />
+            <ButtonsWrapper>
+              <Button onClick={() => updateTodo(todo.id)}>확인</Button>
+              <Button onClick={handleEditMode}>취소</Button>
+            </ButtonsWrapper>
+          </ContentWrapper>
+        </Wrapper>
+      ) : (
+        <Wrapper>
+          <input
+            type="checkbox"
+            // defaultChecked={todo.isCompleted}
+            defaultChecked={isDone}
+            onClick={() => {
+              updateIsCompleted(todo.id);
+            }}
+          />
+ ```
 
 
 ## 완성된 GIF
