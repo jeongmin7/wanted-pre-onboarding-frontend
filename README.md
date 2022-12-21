@@ -66,6 +66,7 @@ setLogin={setLogin}
 
 ```
 ```
+버튼컴포넌트
       <Btn
         disabled={disabled}
         onClick={login === true ? () => handleLogin() : () => handleSignUp()}
@@ -73,7 +74,6 @@ setLogin={setLogin}
         {keyword}
       </Btn>
 ```
-
 - 유효성 검사의 경우 이번 과제에서 요구하는 조건만 만족했기 때문에 추후 수정이 필요할 것 같습니다. 
 4. CRUD
 - todo의 경우 editmode를 state로 관리하여 수정버튼을 누르면 editmode로 변경되는데 editmode일 경우 수정할수 있는 input창과 체크박스가 나오며 editmode가 아닐 경우에는 todo값을 불러왔습니다.  
@@ -107,6 +107,7 @@ setLogin={setLogin}
               updateIsCompleted(todo.id);
             }}
           />
+          -> 삼항연산자를 사용할 때 컴포넌트 단위로 나눴으면 좋았을 것 같습니다. 
  ```
 
 
