@@ -2,7 +2,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Button = ({ keyword, disabled, loginInfo, login, setLogin }) => {
+const Button = ({ keyword, disabled, loginInfo, login }) => {
   const navigate = useNavigate();
   const handleLogin = async () => {
     if (loginInfo.email && loginInfo.password) {
